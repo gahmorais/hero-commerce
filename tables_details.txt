@@ -1,0 +1,18 @@
+CREATE TABLE properties (id serial,address varchar(255),district varchar(255),city varchar(255),postalcode integer,pictures text);
+CREATE TABLE clients(id serial, username varchar(255), fullname varchar(255), phone char(12), email varchar(255));
+CREATE TABLE realtors (id serial, fullname varchar(255), phone(12), email varchar(255));
+
+Sequelize-cli para criar os models e as migrations das tabelas do projeto
+npx sequelize-cli model:generate --name Realtor --attributes fullname:string,phone:string,email:string
+npx sequelize-cli model:generate --name Client --attributes username:string,fullname:string,phone:string,email:string
+npx sequelize-cli model:generate --name Property --attributes type:string,value:real,address:string,district:string,city:string,postalcode:integer,pictures:text
+
+Comando para rodar as migrations
+npx sequelize-cli db:migrate
+
+Adicionando dados a tabela em lote
+npx sequelize-cli seed:generate --name demo-user -> criando modelo que irá popular a tabela
+adicionar dados ao modelo
+
+rodar comando que irá popular tabela
+npx sequelize-cli db:seed:all
