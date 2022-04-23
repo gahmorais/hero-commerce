@@ -13,5 +13,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || "3000", () => {
-  console.log("API online");
+  console.log(`API online from ${process.env.PORT || 3000}`);
 });
