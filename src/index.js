@@ -12,6 +12,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Api imobiliaria" });
 });
 
-app.listen("3000", () => {
+app.listen(process.env.PORT || "3000", () => {
   console.log("API online");
 });
